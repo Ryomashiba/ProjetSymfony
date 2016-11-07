@@ -1,3 +1,7 @@
 projet_homepage:
     path:     /
     defaults: { _controller: ProjetBundle:Default:index }
+
+Salle:
+    path:    /Salle
+    defaults: { _controller: ProjetBundle:Salle:Salle }
