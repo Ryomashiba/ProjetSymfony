@@ -1,4 +1,6 @@
 projet_homepage:
-    path:     /
+    path:     /projet
     defaults: { _controller: ProjetBundle:Default:index }
-
+projet_create_incident:
+    path:     /projet/incident
+    defaults: { _controller: ProjetBundle:Default:incident_create}
