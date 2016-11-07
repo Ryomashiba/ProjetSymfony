@@ -4,3 +4,6 @@ projet_homepage:
 projet_test:
     path:     /test
     defaults: { _controller: ProjetBundle:Default:BaseDeDonne }
+projet_defauelt_create:
+    path:     /create
+    defaults: { _controller: ProjetBundle:Default:create }
