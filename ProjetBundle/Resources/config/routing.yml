@@ -1,3 +1,15 @@
-projet_homepage:
-    path:     /
-    defaults: { _controller: ProjetBundle:Default:index }
+projet_index:
+    path:     /index
+    defaults: { _controller: ProjetBundle:Default:index}
+
+projet_admin:
+    path:     /admin
+    defaults: { _controller: ProjetBundle:Default:yolo}
+
+projet_salle:
+    path:     /salle
+    defaults: { _controller: ProjetBundle:salle:create}
+
+projet_machine:
+    path:     /machine
+    defaults: { _controller: ProjetBundle:machines:create}
