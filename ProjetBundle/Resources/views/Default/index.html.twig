@@ -4,11 +4,18 @@
    <div class="row">
       <div class="col-lg-6">
    <h1>Bienvenue sur le ProjetBundle</h1>
-
-
-   </div>
-
+      </div>
 </div>
+   <div class="row">
+      {% for u in utilisateurs %}
+         <div class="col-xs-4">
+            <form class="form-signin" action="salle" method="post">
+               <button type="submit" >{{ u.name }}</button>
+               <input type="hidden" name="yolo" value="{{ u.name }}">
+            </form>
+         </div>
+      {% endfor %}
+   </div>
    </div>
 {% endblock %}
 {% block title %}

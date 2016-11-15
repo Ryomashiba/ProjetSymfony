@@ -1,9 +1,6 @@
 projet_homepage:
     path:     /
     defaults: { _controller: ProjetBundle:Default:index }
-projet_test:
-    path:     /test
-    defaults: { _controller: ProjetBundle:Default:BaseDeDonne }
-projet_defauelt_create:
-    path:     /create
-    defaults: { _controller: ProjetBundle:Default:create }
+projet_salle:
+    path:     /salle
+    defaults: { _controller: ProjetBundle:Default:ChoixSalle }
