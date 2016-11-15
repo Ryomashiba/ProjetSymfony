@@ -1,7 +1,8 @@
-
 <?php
 
+
 namespace ProjetSymfony\ProjetBundle\Controller;
+
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,29 +14,27 @@ class machinesController extends Controller
 {
     public function createAction(Request $request)
     {
-    
-    if($request->isMethod("POST")) {
 
-    	$name = $request->get("machine");
-        $ip = $request->get("machine");
-        $salle = $request->get("machine");
-        $satut = $request->get("machine");
+        if ($request->isMethod("POST")) {
 
-        $machine = new Machine();
-        $machine->setIp($ip);
-        $machine->setName($name);
-        $machine->setSalle($salle);
-        $machine->setStatut($statut);
+            $name = $request->get("machine");
+            $ip = $request->get("machine");
+            $salle = $request->get("machine");
+            $satut = $request->get("machine");
 
-        $datacontext= $this->getDoctrine()->getEntityManager();
-        $datacontext->persist ($machine);
-        $datacontext->flush();
+            $machine = new Machine();
+            $machine->setIp($ip);
+            $machine->setName($name);
+            $machine->setSalle($salle);
+            $machine->setStatut($satut);
 
-        return $this->render("ProjetBundle:Default:index.html.twig");
+            $datacontext = $this->getDoctrine()->getEntityManager();
+            $datacontext->persist($machine);
+            $datacontext->flush();
 
-    }
+            return $this->render("ProjetBundle:Default:index.html.twig");
 
-        else return $this->render('ProjetBundle:Default:machine.html.twig');
+        } else return $this->render('ProjetBundle:Default:machine.html.twig');
 
     }
 
