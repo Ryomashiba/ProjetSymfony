@@ -1,0 +1,15 @@
+projet_homepage:
+    path:     /projet
+    defaults: { _controller: ProjetBundle:Default:index }
+<<<<<<< HEAD
+projet_incident_create:
+    path:     /formulaire_incident
+    defaults: { _controller: ProjetBundle:Incident:create }
+projet_incident_bidule:
+    path:     /ping
+    defaults: { _controller: ProjetBundle:Incident:bidule }
+=======
+projet_create_incident:
+    path:     /projet/incident
+    defaults: { _controller: ProjetBundle:Default:incident_create}
+>>>>>>> 5bf2a7d53e32e153c2b88387788c0e3304791346
