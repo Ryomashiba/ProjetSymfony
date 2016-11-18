@@ -4,6 +4,9 @@ projet_homepage:
 projet_salle:
     path:     /salle
     defaults: { _controller: ProjetBundle:Default:ChoixSalle }
+projet_machine:
+    path:     /salle/machine
+    defaults: { _controller: ProjetBundle:Default:ChoixMachine }
 projet_Admin_homepage:
     path:     /admin/index
     defaults: { _controller: ProjetBundle:Default:Admin }
@@ -13,6 +16,9 @@ projet_admin_deco:
 projet_admin_salle:
     path:     /admin/salle
     defaults: { _controller: ProjetBundle:Default:AdminChoixSalle }
+projet_admin_machine:
+    path:     /admin/machine
+    defaults: { _controller: ProjetBundle:Default:AdminChoixMachine }
 projet_admin_retour:
     path:     /admin/retour
     defaults: { _controller: ProjetBundle:Default:retourAction }

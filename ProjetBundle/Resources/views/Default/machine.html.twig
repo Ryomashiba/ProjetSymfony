@@ -2,23 +2,22 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            {%  if session is defined %}
-            <div class="row">
-                <div class="col-lg-6">
-                    <h1>{{ session.salle }}</h1>
-                </div>
-            </div>
-            {% endif %}
+
+
+
 
             {% for u in utilisateurs %}
                 <div class="col-xs-4">
                     <form class="form-signin" >
                         <button type="submit" >{{ u.name }}</button>
+                        <button type="submit" >{{ u.ip }}</button>
+                        <button type="submit" >{{ u.salle }}</button>
+                        <button type="submit" >{{ u.statut }}</button>
                     </form>
                 </div>
             {% endfor %}
             <div class="col-xs-4">
-                <form class="form-signin" action="Projet/admin" method="post">
+                <form class="form-signin" action="salle">
                     <button type="submit" >Retour</button>
                 </form>
             </div>

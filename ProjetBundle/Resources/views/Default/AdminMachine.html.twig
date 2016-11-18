@@ -5,7 +5,7 @@
             {%  if session is defined %}
             <div class="row">
                 <div class="col-lg-6">
-                    <h1>{{ session.salle }}</h1>
+                    <h1>{{ session.machine }}</h1>
                 </div>
             </div>
             {% endif %}
@@ -14,6 +14,9 @@
                 <div class="col-xs-4">
                     <form class="form-signin" >
                         <button type="submit" >{{ u.name }}</button>
+                        <button type="submit" >{{ u.ip }}</button>
+                        <button type="submit" >{{ u.salle }}</button>
+                        <button type="submit" >{{ u.statut }}</button>
                     </form>
                 </div>
             {% endfor %}

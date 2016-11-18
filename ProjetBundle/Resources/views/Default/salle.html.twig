@@ -8,8 +8,9 @@
 
             {% for u in utilisateurs %}
                 <div class="col-xs-4">
-                    <form class="form-signin" >
+                    <form class="form-signin" action="salle/machine" method="post">
                         <button type="submit" >{{ u.name }}</button>
+                        <input type="hidden" name="coco" value="{{ u.name }}">
                     </form>
                 </div>
             {% endfor %}

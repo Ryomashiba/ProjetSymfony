@@ -4,6 +4,7 @@ namespace ProjetSymfony\ProjetBundle\Controller;
 
 use ProjetSymfony\ProjetBundle\Entity\Admin;
 use ProjetSymfony\ProjetBundle\Entity\Salle;
+use ProjetSymfony\ProjetBundle\Entity\Machine;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Bach\BackofficeBundle\Entity\Utilisateur;
 use Symfony\Component\HttpFoundation\Response;
@@ -39,7 +40,27 @@ class DefaultController extends Controller
         return $this->render('ProjetBundle:Default:index.html.twig');
     }
 
-    public function AdminChoixSalleAction(Request $request){
+    public function ChoixMachineAction(Request $request)
+    {
+        if ($request->isMethod('POST'))
+        {
+
+
+            $machine = $request->request->get('coco');
+            $repo = $this->getDoctrine()->getRepository("ProjetBundle:Machine");
+            $utilisateurs = $repo->findBy(array('name'=> $machine));
+
+
+            var_dump($utilisateurs);
+            $response = $this->get('templating')
+                ->render('ProjetBundle:Default:machine.html.twig', array('utilisateurs'=>$utilisateurs));
+            return new Response($response);
+        }
+        return $this->render('ProjetBundle:Default:salle.html.twig');
+    }
+
+    public function AdminChoixSalleAction(Request $request)
+    {
 
         if ($request->isMethod('POST'))
         {
@@ -56,7 +77,27 @@ class DefaultController extends Controller
         return $this->render('ProjetBundle:Default:index.html.twig');
     }
 
-    public function AdminAction(Request $request){
+    public function AdminChoixMachineAction(Request $request)
+    {
+
+        if ($request->isMethod('POST'))
+        {
+            $machine = $request->request->get('coco');
+            $this->get('session')->set('machine',$machine);
+            $repo = $this->getDoctrine()->getRepository("ProjetBundle:Machine");
+            $utilisateurs = $repo->findBy(array('name'=>$machine));
+            $utilisateurs = $repo->findBy(array('salle'=>$salle));
+
+
+            $response = $this->get('templating')
+                ->render('ProjetBundle:Default:machine.html.twig', array('utilisateurs'=>$utilisateurs));
+            return new Response($response);
+        }
+        return $this->render('ProjetBundle:Default:salle.html.twig');
+    }
+
+    public function AdminAction(Request $request)
+    {
 
 
         if ($request->isMethod("POST"))

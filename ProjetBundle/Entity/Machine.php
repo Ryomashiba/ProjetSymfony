@@ -36,9 +36,9 @@ class Machine
     private $name;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="salle", type="integer", length=50)
+     * @ORM\Column(name="salle", type="string", length=50)
      */
     private $salle;
 
