@@ -1,0 +1,32 @@
+{% extends "ProjetBundle::layout.html.twig" %}
+{% block content %}
+    <div class="container">
+        {%  if session is defined %}
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>Bonjour Admin</h1>
+                </div>
+            </div>
+        {% endif %}
+        <div class="row">
+            {% if utilisateurs is defined %}
+                {% for u in utilisateurs %}
+                    <div class="col-xs-4">
+                        <form class="form-signin" action="salle" method="post">
+                            <button type="submit" >{{ u.name }}</button>
+                            <input type="hidden" name="yolo" value="{{ u.name }}">
+                        </form>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+
+        </div>
+        <div class="col-xs-4">
+        <form class="form-signin" action="deconnexion" method="POST">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">deconnexion</button>
+        </form></div>
+    </div>
+{% endblock %}
+{% block title %}
+{% endblock %}

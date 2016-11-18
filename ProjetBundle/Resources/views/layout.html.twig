@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}BackPedale{% endblock %}</title>
+
+
+    {% stylesheets
+    '../vendor/twitter/bootstrap/less/bootstrap.less'
+    '../vendor/twitter/bootstrap/less/responsive.less'
+    filter='lessphp,cssrewrite'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}">
+    {% endstylesheets %}
+
+
+
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+</head>
+<body>
+
+{% block content %}
+{% endblock %}
+{% javascripts
+'../vendor/jquery/jquery-1.9.1.min.js'
+'../vendor/twitter/bootstrap/js/bootstrap-alert.js'
+%}
+<script type="test/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% block script %}
+{% endblock %}
+</body>
+</html>

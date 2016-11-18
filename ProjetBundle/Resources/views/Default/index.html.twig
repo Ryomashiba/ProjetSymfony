@@ -1,3 +1,28 @@
-Hello Precieux Hermann! 
-<p>
-<a href="Salle">Salle</a> 
+{% extends "ProjetBundle::layout.html.twig" %}
+{% block content %}
+<div class="container">
+   <div class="row">
+      <div class="col-lg-6">
+   <h1>Bienvenue sur le ProjetBundle</h1>
+      </div>
+</div>
+   <div class="row">
+      {% for u in utilisateurs %}
+         <div class="col-xs-4">
+            <form class="form-signin" action="salle" method="post">
+               <button type="submit" >{{ u.name }}</button>
+               <input type="hidden" name="yolo" value="{{ u.name }}">
+            </form>
+         </div>
+      {% endfor %}
+      <form class="form-signin" action="admin/index" method="POST">
+         <h2 class="form-signin-heading">Please sign in</h2>
+         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="mail">
+         <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password">
+         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+   </div>
+   </div>
+{% endblock %}
+{% block title %}
+{% endblock %}
