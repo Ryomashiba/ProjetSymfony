@@ -31,16 +31,9 @@ class Salle
     /**
      * @var int
      *
-     * @ORM\Column(name="machines", type="int", length=100)
+     * @ORM\Column(name="machines", type="integer", length=100)
      */
     private $machines;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date_creation", type="datetime")
-     */
-    private $dateCreation;
 
 
     /**
@@ -80,11 +73,11 @@ class Salle
     /**
      * Set machines
      *
-     * @param \int $machines
+     * @param integer $machines
      *
      * @return Salle
      */
-    public function setMachines(\int $machines)
+    public function setMachines($machines)
     {
         $this->machines = $machines;
 
@@ -94,35 +87,11 @@ class Salle
     /**
      * Get machines
      *
-     * @return \int
+     * @return int
      */
     public function getMachines()
     {
         return $this->machines;
-    }
-
-    /**
-     * Set dateCreation
-     *
-     * @param \DateTime $dateCreation
-     *
-     * @return Salle
-     */
-    public function setDateCreation($dateCreation)
-    {
-        $this->dateCreation = $dateCreation;
-
-        return $this;
-    }
-
-    /**
-     * Get dateCreation
-     *
-     * @return \DateTime
-     */
-    public function getDateCreation()
-    {
-        return $this->dateCreation;
     }
 }
 
