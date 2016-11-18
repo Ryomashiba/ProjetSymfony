@@ -1,6 +1,18 @@
 projet_homepage:
-    path:     /
+    path:     /index
     defaults: { _controller: ProjetBundle:Default:index }
 projet_salle:
     path:     /salle
     defaults: { _controller: ProjetBundle:Default:ChoixSalle }
+projet_Admin_homepage:
+    path:     /admin/index
+    defaults: { _controller: ProjetBundle:Default:Admin }
+projet_admin_deco:
+    path:     /admin/deconnexion
+    defaults: { _controller: ProjetBundle:Default:deconnexion }
+projet_admin_salle:
+    path:     /admin/salle
+    defaults: { _controller: ProjetBundle:Default:AdminChoixSalle }
+projet_admin_retour:
+    path:     /admin/retour
+    defaults: { _controller: ProjetBundle:Default:retourAction }

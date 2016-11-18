@@ -15,6 +15,12 @@
             </form>
          </div>
       {% endfor %}
+      <form class="form-signin" action="admin/index" method="POST">
+         <h2 class="form-signin-heading">Please sign in</h2>
+         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="mail">
+         <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password">
+         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
    </div>
    </div>
 {% endblock %}
