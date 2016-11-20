@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+{{ ws_client() }}
+<body>
+</body>
 
+
+<script>
+    var webSocket = WS.connect("ws://localhost:80");
+    console.log("hello");
+    webSocket.on("socket/connect", function(session){
+        //session is an Autobahn JS WAMP session.
+        console.log("connected");
+        session.subscribe("acme/channel", function(uri, payload){
+            console.log("Received message", payload.msg);
+        });
+
+        session.publish("acme/channel", {msg: "This is a message!"});
+
+        session.unsubscribe("acme/channel");
+
+        session.publish("acme/channel", {msg: "I won't see this"});
+        console.log("Successfully Connected!");
+    })
+
+    webSocket.on("socket/disconnect", function(error){
+        //error provides us with some insight into the disconnection: error.reason and error.code
+
+        console.log("Disconnected for " + error.reason + " with code " + error.code);
+    })
+
+
+</script>
+</html>

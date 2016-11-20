@@ -12,6 +12,7 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
+
         return $this->render('ProjetBundle:Default:index.html.twig');
     }
     public function incident_createAction()
